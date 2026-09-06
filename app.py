@@ -473,7 +473,8 @@ def check():
             thread.start()
 
             time.sleep(0.1)
-  for thread in active_threads:
+            
+        for thread in active_threads:
             thread.join()
 
         state.valid_tokens = [r['fullToken'] for r in state.checker_results if r['status'] == 'success']
